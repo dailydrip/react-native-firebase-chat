@@ -3,6 +3,7 @@ import {
   Text,
   View,
   StyleSheet,
+  Image,
   Dimensions,
   TouchableHighlight
 } from 'react-native';
@@ -18,13 +19,20 @@ class Item extends Component {
   }
 
   render() {
+    if(this.props.item.type == 'image') {
+
+      return(<View style={styles.containerImage}>
+              <Text style={styles.name}>{this.props.item.name}</Text>
+              <Image source={{uri: this.props.item.message}} style={{width: 100, height: 100, marginLeft: 10}} />
+            </View>
+        )
+    }
+
     return (
-      <TouchableHighlight>
-        <View style={styles.container}>
-            <Text style={styles.name}>{this.props.item.name}</Text>
-          <Text style={styles.message}>{this.props.item.message}</Text>
-        </View>
-      </TouchableHighlight>
+      <View style={styles.container}>
+          <Text style={styles.name}>{this.props.item.name}</Text>
+        <Text style={styles.message}>{this.props.item.message}</Text>
+      </View>
     );
   }
 }
@@ -33,6 +41,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: 70,
+    width: width,
+    marginRight: 20,
+    backgroundColor: '#E9E9EF',
+    justifyContent: 'center',
+  },
+  containerImage: {
+    flex: 1,
     width: width,
     backgroundColor: '#E9E9EF',
     justifyContent: 'center',

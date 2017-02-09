@@ -11,6 +11,8 @@
     "react": "15.4.2",
     "react-native": "0.41.2",
     "react-native-elements": "^0.9.5",
+    "react-native-fetch-blob": "^0.10.2",
+    "react-native-image-picker": "latest",
     "react-native-invertible-scroll-view": "^1.0.0",
     "react-native-vector-icons": "^4.0.0",
     "react-navigation": "^1.0.0-beta.1"
